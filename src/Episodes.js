@@ -25,21 +25,21 @@ class Episodes extends Component {
   render () {
     console.log('episodes component render')
     console.log(this.state.episodes)
+
+    // const { urls } = this.state.episodes
+
     return (
       <Fragment>
         <h4>Episodes:</h4>
         <h5>{this.props.location.state ? this.props.location.state.message : ''}</h5>
         <div>{(this.state.episodes.length === 0) ? <Spinner animation="border" /> : ''}
         </div>
-        <ul>
-          {this.state.episodes.map(episode => (
-            <li key={episode.urls}>
-              {episode.urls.map(url => (
-                url.url
-              ))}
-            </li>
-          ))}
-        </ul>
+        <div>
+          {this.state.episodes.map((episode, episodeIndex) => {
+            return episode.urls.map((url, urlIndex) => <img key={urlIndex.toString() + episodeIndex.toString()} src={url.url} />)
+          })
+          }
+        </div>
       </Fragment>
     )
   }
