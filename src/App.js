@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Episodes from './Episodes'
 import Episode from './Episode'
+import Home from './Home'
 
 import Alert from 'react-bootstrap/Alert'
 import { AlertList } from 'react-bs-notifier'
@@ -72,16 +73,16 @@ class App extends Component {
           </Alert>
         ))}
         <main className="container">
-          <Route path='/sign-up' render={() => (
+          <Route exact path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
-          <Route path='/sign-in' render={() => (
+          <Route exact path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+          <AuthenticatedRoute user={user} exact path='/sign-out' render={() => (
             <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+          <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/episodes' render={() => (
@@ -90,6 +91,9 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/episodes/:id' render={({ match }) => (
             <Episode alert={this.alert} user={user} match={match}/>
           )} />
+          <div>
+            { user ? <Home/> : ''}
+          </div>
         </main>
       </React.Fragment>
     )
