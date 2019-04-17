@@ -57,7 +57,10 @@ class Episode extends Component {
     return (
       <Fragment>
         <div>
-          {urls[0].url}
+          {urls.map((url, urlIndex) => {
+            return <img key={urlIndex} src={url.url} />
+          })
+          }
         </div>
         <button onClick={this.deleteEpisode}>Delete</button>
         <Link to={this.props.match.url + '/edit'}><button>Edit</button></Link>
