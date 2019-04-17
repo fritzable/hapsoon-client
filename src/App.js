@@ -9,6 +9,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Episodes from './Episodes'
+import Episode from './Episode'
 
 import Alert from 'react-bootstrap/Alert'
 import { AlertList } from 'react-bs-notifier'
@@ -20,8 +21,8 @@ class App extends Component {
     this.state = {
       user: null,
       alerts: [],
-      timeout: 2000
-      // position: 'bottom-left'
+      timeout: 2000,
+      position: 'bottom-left'
     }
   }
 
@@ -53,14 +54,14 @@ class App extends Component {
   }
 
   render () {
-    const { alerts, user, timeout } = this.state
+    const { alerts, user, timeout, position } = this.state
 
     return (
       <React.Fragment>
         <Header user={user} />
 
         <AlertList
-          // position={position}
+          position={position}
           alerts={alerts}
           timeout={timeout} />
         {alerts.map((alert, index) => (
@@ -83,8 +84,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/episodes' render={() => (
+          <AuthenticatedRoute user={user} exact path='/episodes' render={() => (
             <Episodes alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/episodes/:id' component={Episode} render={({ match }) => (
+            <Episode alert={this.alert} user={user} match={match}/>
           )} />
         </main>
       </React.Fragment>

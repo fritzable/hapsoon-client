@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from './apiConfig'
 
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
 
 class Episodes extends Component {
@@ -34,12 +34,14 @@ class Episodes extends Component {
         <h5>{this.props.location.state ? this.props.location.state.message : ''}</h5>
         <div>{(this.state.episodes.length === 0) ? <Spinner animation="border" /> : ''}
         </div>
-        <div>
-          {this.state.episodes.map((episode, episodeIndex) => {
-            return episode.urls.map((url, urlIndex) => <img key={urlIndex.toString() + episodeIndex.toString()} src={url.url} />)
-          })
-          }
-        </div>
+        <ul>
+          {this.state.episodes.map(episode => (
+            <li key={episode._id}>
+              <Link to={'/episodes/' + episode._id}>{episode._id}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Fragment>
     )
   }
