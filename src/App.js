@@ -87,7 +87,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/episodes' render={() => (
             <Episodes alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/episodes/:id' component={Episode} render={({ match }) => (
+          <AuthenticatedRoute user={user} exact path='/episodes/:id' render={({ match }) => (
             <Episode alert={this.alert} user={user} match={match}/>
           )} />
         </main>

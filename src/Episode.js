@@ -31,8 +31,16 @@ class Episode extends Component {
   }
 
   deleteEpisode = () => {
+    const { user } = this.props
     const id = this.props.match.params.id
-    axios.delete(`${apiUrl}/episodes/${id}`)
+    console.log('id is, ', id)
+    return axios({
+      url: `${apiUrl}/episodes/${id}`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      }
+    })
       .then(() => this.setState({ shouldRedirect: true }))
       .catch(console.log)
   }
