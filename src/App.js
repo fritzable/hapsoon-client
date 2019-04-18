@@ -11,9 +11,11 @@ import ChangePassword from './auth/components/ChangePassword'
 import Episodes from './Episodes'
 import Episode from './Episode'
 import Home from './Home'
+import EpisodeEdit from './EpisodeEdit'
 
-import Alert from 'react-bootstrap/Alert'
+// import Alert from 'react-bootstrap/Alert'
 import { AlertList } from 'react-bs-notifier'
+// dont forget to npm i react-bs-notifier
 
 class App extends Component {
   constructor () {
@@ -64,14 +66,8 @@ class App extends Component {
         <AlertList
           position={position}
           alerts={alerts}
-          timeout={timeout} />
-        {alerts.map((alert, index) => (
-          <Alert key={index} dismissible variant={alert.type}>
-            <Alert.Heading>
-              {alert.message}
-            </Alert.Heading>
-          </Alert>
-        ))}
+          timeout={timeout}
+        />
         <main className="container">
           <Route exact path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
@@ -90,6 +86,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/episodes/:id' render={({ match }) => (
             <Episode alert={this.alert} user={user} match={match}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/episodes/:id/edit' render={({ match }) => (
+            <EpisodeEdit alert={this.alert} user={user} match={match}/>
           )} />
           <div>
             { user ? <Home/> : ''}
