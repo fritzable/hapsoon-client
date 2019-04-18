@@ -12,6 +12,7 @@ import Episodes from './Episodes'
 import Episode from './Episode'
 import Home from './Home'
 import EpisodeEdit from './EpisodeEdit'
+import EpisodeCreate from './EpisodeCreate'
 
 // import Alert from 'react-bootstrap/Alert'
 import { AlertList } from 'react-bs-notifier'
@@ -89,6 +90,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/episodes/:id/edit' render={({ match }) => (
             <EpisodeEdit alert={this.alert} user={user} match={match}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/episodes-create' render={({ match }) => (
+            <EpisodeCreate alert={this.alert} user={user} match={match}/>
           )} />
           <div>
             { user ? <Home/> : ''}

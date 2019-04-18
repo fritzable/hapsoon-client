@@ -32,13 +32,10 @@ class EpisodeEdit extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log('event is, ', event)
 
     const { episode } = this.state
-    console.log('this.state is, ', episode)
 
     const { user } = this.props
-    console.log('this.props is, ', user)
     axios({
       url: `${apiUrl}/episodes/${episode._id}`,
       method: 'patch',
@@ -69,7 +66,6 @@ class EpisodeEdit extends Component {
     // const updatedEpisode =
     this.setState({ episode: updatedEpisode
     })
-    console.log('episode , ', this.state.episode)
   }
 
   render () {

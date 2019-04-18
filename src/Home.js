@@ -8,6 +8,7 @@ const Home = () => (
       <div className="btn"><Link to="/episodes">Episodes</Link>
       </div>
     </ButtonToolbar>
+    <Link to="/episodes-create">Add Episode</Link>
   </Fragment>
 )
 
