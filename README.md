@@ -49,14 +49,22 @@ The back end is built with Express and Mongoose
 
 [User stories:](#)
 As a user, I want to:
-Signup with email, password, and password confirmation.
-Login with email and password.
-Logout when logged in.
-Change password with current and new password.
-create a new resource (create a new episode)
-update a resource (upload a new image to an episode)
-delete a resource (delete an image or an episode)
-view an image or list of images, or a list of episode
+
+- Signup with email, password, and password confirmation.
+
+- Login with email and password.
+
+- Logout when logged in.
+
+- Change password with current and new password.
+
+- Create a new resource (create a new episode)
+
+- Update a resource (upload a new image to an episode)
+
+- delete a resource (delete an image or an episode)
+
+- view an image or list of images, or a list of episodes
 
 ### To set up:
 1. Fork and clone this repository.
