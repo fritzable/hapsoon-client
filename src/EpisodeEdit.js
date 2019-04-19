@@ -18,7 +18,6 @@ class EpisodeEdit extends Component {
   componentDidMount () {
     const { user } = this.props
     const id = this.props.match.params.id
-    console.log('id is, ', id)
     return axios({
       url: `${apiUrl}/episodes/${id}`,
       method: 'GET',
@@ -83,7 +82,6 @@ class EpisodeEdit extends Component {
 
     return (
       urls.map((url, i) => {
-        console.log(i)
         return (
           <EpisodeForm
             key={url._id}

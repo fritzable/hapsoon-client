@@ -17,7 +17,6 @@ class Episode extends Component {
   componentDidMount () {
     const { user } = this.props
     const id = this.props.match.params.id
-    console.log('id is, ', id)
     return axios({
       url: `${apiUrl}/episodes/${id}`,
       method: 'GET',
@@ -26,14 +25,12 @@ class Episode extends Component {
       }
     })
       .then(response => this.setState({ episode: response.data.episode }))
-      .then(console.log('this.state is', this.state))
       .catch(console.log)
   }
 
   deleteEpisode = () => {
     const { user } = this.props
     const id = this.props.match.params.id
-    console.log('id is, ', id)
     return axios({
       url: `${apiUrl}/episodes/${id}`,
       method: 'DELETE',

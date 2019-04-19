@@ -18,7 +18,6 @@
 //   componentDidMount () {
 //     const { user } = this.props
 //     const id = this.props.match.params.id
-//     console.log('id is, ', id)
 //     return axios({
 //       url: `${apiUrl}/episodes/${id}`,
 //       method: 'GET',
@@ -32,13 +31,10 @@
 //
 //   handleSubmit = (event) => {
 //     event.preventDefault()
-//     console.log('event is, ', event)
 //
 //     const { episode } = this.state
-//     console.log('this.state is, ', episode)
 //
 //     const { user } = this.props
-//     console.log('this.props is, ', user)
 //     axios({
 //       url: `${apiUrl}/episodes/${episode._id}`,
 //       method: 'patch',
@@ -69,7 +65,6 @@
 //     // const updatedEpisode =
 //     this.setState({ episode: updatedEpisode
 //     })
-//     console.log('episode , ', this.state.episode)
 //   }
 //
 //   render () {
@@ -87,7 +82,6 @@
 //
 //     return (
 //       urls.map((url, i) => {
-//         console.log(i)
 //         return (
 //           <EpisodeForm
 //             key={url._id}
@@ -173,7 +167,6 @@ class EpisodeCreate extends Component {
 
   handleChange = event => {
     const updatedUrls = []
-    console.log('updatedUrls , ', updatedUrls)
     return updatedUrls.push(event.target.value)
   }
 
@@ -196,7 +189,6 @@ class EpisodeCreate extends Component {
     //
     // return (
     //   urls.map((url, i) => {
-    //     console.log(i)
     return (
       <Fragment>
         <CreateForm

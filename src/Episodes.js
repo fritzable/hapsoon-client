@@ -14,7 +14,6 @@ class Episodes extends Component {
     }
   }
   componentDidMount () {
-    console.log('episodes component mounted')
     axios.get(apiUrl + '/episodes')
       .then(response => this.setState({
         episodes: response.data.episodes
@@ -23,9 +22,6 @@ class Episodes extends Component {
   }
 
   render () {
-    console.log('episodes component render')
-    console.log(this.state.episodes)
-
     // const { urls } = this.state.episodes
 
     return (

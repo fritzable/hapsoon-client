@@ -62,42 +62,44 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Header user={user} />
+        <div style={ { backgroundImage: 'url(require("./Design.svg"))' } }>
+          <Header user={user} />
 
-        <AlertList
-          position={position}
-          alerts={alerts}
-          timeout={timeout}
-        />
-        <main className="container">
-          <Route exact path='/sign-up' render={() => (
-            <SignUp alert={this.alert} setUser={this.setUser} />
-          )} />
-          <Route exact path='/sign-in' render={() => (
-            <SignIn alert={this.alert} setUser={this.setUser} />
-          )} />
-          <AuthenticatedRoute user={user} exact path='/sign-out' render={() => (
-            <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
-            <ChangePassword alert={this.alert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path='/episodes' render={() => (
-            <Episodes alert={this.alert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path='/episodes/:id' render={({ match }) => (
-            <Episode alert={this.alert} user={user} match={match}/>
-          )} />
-          <AuthenticatedRoute user={user} exact path='/episodes/:id/edit' render={({ match }) => (
-            <EpisodeEdit alert={this.alert} user={user} match={match}/>
-          )} />
-          <AuthenticatedRoute user={user} exact path='/episodes-create' render={({ match }) => (
-            <EpisodeCreate alert={this.alert} user={user} match={match}/>
-          )} />
-          <div>
-            { user ? <Home/> : ''}
-          </div>
-        </main>
+          <AlertList
+            position={position}
+            alerts={alerts}
+            timeout={timeout}
+          />
+          <main className="container">
+            <Route exact path='/sign-up' render={() => (
+              <SignUp alert={this.alert} setUser={this.setUser} />
+            )} />
+            <Route exact path='/sign-in' render={() => (
+              <SignIn alert={this.alert} setUser={this.setUser} />
+            )} />
+            <AuthenticatedRoute user={user} exact path='/sign-out' render={() => (
+              <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
+              <ChangePassword alert={this.alert} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} exact path='/episodes' render={() => (
+              <Episodes alert={this.alert} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} exact path='/episodes/:id' render={({ match }) => (
+              <Episode alert={this.alert} user={user} match={match}/>
+            )} />
+            <AuthenticatedRoute user={user} exact path='/episodes/:id/edit' render={({ match }) => (
+              <EpisodeEdit alert={this.alert} user={user} match={match}/>
+            )} />
+            <AuthenticatedRoute user={user} exact path='/episodes-create' render={({ match }) => (
+              <EpisodeCreate alert={this.alert} user={user} match={match}/>
+            )} />
+            <div>
+              { user ? <Home/> : ''}
+            </div>
+          </main>
+        </div>
       </React.Fragment>
     )
   }
