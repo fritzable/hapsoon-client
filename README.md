@@ -62,4 +62,4 @@ view an image or list of images, or a list of episode
 1. Fork and clone this repository.
 2. ```npm install``` from command line to install dependencies.
 3. To run in development mode, ```npm start```
-4. To deploy in production, ```npm run serve```
+4. To deploy in production, ```npm run deploy```
