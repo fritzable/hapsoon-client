@@ -28,7 +28,7 @@ class Episodes extends Component {
       <Fragment>
         <h4>Episodes:</h4>
         <h5>{this.props.location.state ? this.props.location.state.message : ''}</h5>
-        <div>{(this.state.episodes.length === 0) ? <Spinner animation="border" /> : ''}
+        <div>{(this.state.episodes.length === 0) ? <Fragment><Spinner animation="border" /><p>`No episodes yet. Click add.`</p></Fragment> : ''}
         </div>
         <ul>
           {this.state.episodes.map(episode => (

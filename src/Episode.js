@@ -67,8 +67,11 @@ class Episode extends Component {
           })
           }
         </div>
-        <button onClick={this.deleteEpisode}>Delete</button>
-        <Link to={this.props.match.url + '/edit'}><button>Edit</button></Link>
+        <div>{(this.props.user._id === this.state.episode.owner) ? <Fragment>
+          <button onClick={this.deleteEpisode}>Delete Episode</button>
+          <Link to={this.props.match.url + '/edit'}><button>Add URL</button></Link>
+        </Fragment> : <p>cant edit this content</p>}
+        </div>
       </Fragment>
     )
   }
