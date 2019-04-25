@@ -1,6 +1,6 @@
 {
   "name": "hapsoon-react-client",
-  "homepage": "https://fritzable.github.io/capstone-client",
+  "homepage": "https://fritzable.github.io/hapsoon-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
