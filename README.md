@@ -21,7 +21,7 @@ The back end is built with Express and Mongoose
 
 ### Repo for the back end:
 
-[back end repo:](https://github.com/fritzable/capstone-api)
+[back end repo:](https://github.com/fritzable/hapsoon-api)
 
 ### Plans for future fixes:
 
