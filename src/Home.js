@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
-import { Link, withRouter } from 'react-router-dom'
+import { Route, Link, withRouter } from 'react-router-dom'
+import MainCarousel from './MainCarousel.js'
 
 const Home = () => (
   <Fragment>
+    <Route exact path='/' component={MainCarousel} />
     <ButtonToolbar>
       <div className="btn"><Link to="/episodes">Episodes</Link>
       </div>
