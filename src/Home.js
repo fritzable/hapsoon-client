@@ -7,10 +7,11 @@ const Home = () => (
   <Fragment>
     <Route exact path='/' component={MainCarousel} />
     <ButtonToolbar>
-      <div className="btn"><Link to="/episodes">Episodes</Link>
+      <div className="btn"><Link to="/episodes-create">Add Episode</Link>
+      </div>
+      <div className="btn"><Link to="/episodes">List of Episodes</Link>
       </div>
     </ButtonToolbar>
-    <Link to="/episodes-create">Add Episode</Link>
   </Fragment>
 )
 

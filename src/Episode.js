@@ -29,14 +29,14 @@ class Episode extends Component {
   }
 
   deleteEpisode = () => {
-    const { user } = this.props
+    // const { user } = this.props
     const id = this.props.match.params.id
     return axios({
       url: `${apiUrl}/episodes/${id}`,
-      method: 'DELETE',
-      headers: {
-        'Authorization': `Token token=${user.token}`
-      }
+      method: 'DELETE'
+      // headers: {
+      //   'Authorization': `Token token=${user.token}`
+      // }
     })
       .then(() => this.setState({ shouldRedirect: true }))
       .catch(console.log)
@@ -52,7 +52,7 @@ class Episode extends Component {
         pathname: '/episodes', state: { message: 'successfully deleted episode' }
       }} />
     }
-    const { urls } = this.state.episode
+    const { urls, _id } = this.state.episode
 
     // {this.state.episode.map((episode, episodeIndex) => {
     //   return episode.urls.map((url, urlIndex) => <img key={urlIndex.toString() + episodeIndex.toString()} src={url.url} />)
@@ -61,15 +61,16 @@ class Episode extends Component {
 
     return (
       <Fragment>
+        <h6>Episode number: { _id }</h6>
         <div>
           {urls.map((url, urlIndex) => {
             return <img key={urlIndex} src={url.url} />
           })
           }
         </div>
-        <div>{(this.props.user._id === this.state.episode.owner) ? <Fragment>
-          <button onClick={this.deleteEpisode}>Delete Episode</button>
-          <Link to={this.props.match.url + '/edit'}><button>Add URL</button></Link>
+        <div>{(this.props.user._id) ? <Fragment>
+          <Link to={this.props.match.url + '/edit'}><button>Add image to Episode</button></Link>
+          <button className='btn-danger' onClick={this.deleteEpisode}>Delete Episode</button>
         </Fragment> : <p>cant edit this content</p>}
         </div>
       </Fragment>
