@@ -25,7 +25,9 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <h6>Hapsoon</h6>
+    <React.Fragment>
+      <Link to="/"><img src={require('../HapSoonLogo_2.svg') } /></Link>
+    </React.Fragment>
     <nav>
       { user && <span>Welcome, {user.email}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }
