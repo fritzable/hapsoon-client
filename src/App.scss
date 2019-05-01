@@ -1,11 +1,16 @@
+$primary: #234D51;
+$secondary: #CC998D;
+$secondary-light: #ECEBE4;
+$tertiary: #429EA6;
+$quaternary: #16F4D0;
 $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
 
+.flash-error,
 .flash-success,
-.flash-warning,
-.flash-error {
+.flash-warning {
   border: 1px solid $charcoal;
   display: block;
   left: 25%;
