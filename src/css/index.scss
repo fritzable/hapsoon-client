@@ -1,5 +1,5 @@
 body {
-  background: url('../Design.svg');
+  // background: url('../Design.svg');
   background-repeat: no-repeat;
   background-size: cover;
   font-family: sans-serif;
@@ -9,4 +9,24 @@ body {
 
 .alert {
   margin: 30px;
+}
+
+.welcome {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 60vw;
+
+  h6 {
+    align-self: center;
+    padding: 20px;
+    }
+}
+
+.welcomeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }

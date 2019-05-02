@@ -11,8 +11,7 @@ class EpisodeCreate extends Component {
 
     this.state = {
       episode: null,
-      created: false,
-      message: ''
+      created: false
     }
   }
 
@@ -56,8 +55,8 @@ class EpisodeCreate extends Component {
     })
       // Setting new state and including a created id
       .then(response => this.setState({
-        created: true,
-        episode: response.data.episode
+        created: true
+        // episode: response.data.episode
       }))
       .catch(() => this.setState({
         episode: { ...episode, urls: [] }
@@ -71,19 +70,19 @@ class EpisodeCreate extends Component {
   }
 
   render () {
-    // const { episode, created } = this.state
+    const { episode, created } = this.state
 
     // if (!this.state.episode) {
     //   return <p>Loading...</p>
     // }
-    if (this.state.created) {
+    if (created) {
       return <Redirect to={{
-        pathname: '/episodes', state: { message: 'created episode. Click the episode that was just created to add images.' }
+        pathname: `/episodes/${episode._id}`, state: { message: 'created episode' }
       }} />
+      // return <Redirect to={{
+      //   pathname: '/episodes', state: { message: 'created episode. Click the episode that was just created to add images.' }
+      // }} />
     }
-    // if (created) {
-    //   return <Redirect to={`/episodes/${episode._id}`} />
-    // }
 
     // const { urls } = this.state.episode
     //

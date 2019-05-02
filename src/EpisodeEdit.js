@@ -11,6 +11,7 @@ class EpisodeEdit extends Component {
     this.state = {
       episode: null,
       updated: false,
+      image: [],
       message: ''
     }
   }
@@ -57,13 +58,13 @@ class EpisodeEdit extends Component {
     const updatedEpisode = {
       ...this.state.episode
     }
+    console.log('updatedEpisode, ', updatedEpisode)
     updatedEpisode.urls[event.target.name].url = event.target.value
-
     // const inputName = event.target.name
     // const updatedInputValue = event.target.value
     //
     // const updatedEpisode =
-    this.setState({ episode: updatedEpisode
+    this.setState({ image: updatedEpisode
     })
   }
 

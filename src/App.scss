@@ -1,11 +1,16 @@
+$primary: #234D51;
+$secondary: #CC998D;
+$secondary-light: #ECEBE4;
+$tertiary: #429EA6;
+$quaternary: #16F4D0;
 $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
 
+.flash-error,
 .flash-success,
-.flash-warning,
-.flash-error {
+.flash-warning {
   border: 1px solid $charcoal;
   display: block;
   left: 25%;
@@ -45,4 +50,37 @@ $charcoal: #ccc;
     align-self: flex-end;
     max-width: 200px;
   }
+}
+
+.banner {
+  background: linear-gradient(135deg, $tertiary, $quaternary 60%, $secondary);
+  height: 15vh;
+
+  h4 {
+    align-self: flex-end;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 12vw;
+    height: 10vw;
+    margin-left: 20px;
+    padding-top: 10px;
+  }
+}
+
+.btn {
+  border: $quaternary 1px solid;
+  margin: 5px;
+}
+
+a {
+  color: $tertiary;
+}
+
+.carousel-item {
+  width: 50vw;
+  height: 50vh;
 }
