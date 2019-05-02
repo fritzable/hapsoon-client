@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Image, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import apiUrl from './apiConfig'
 import { Redirect } from 'react-router'
@@ -61,13 +62,17 @@ class Episode extends Component {
 
     return (
       <Fragment>
-        <h6>Episode number: { _id }</h6>
-        <div>
-          {urls.map((url, urlIndex) => {
-            return <img key={urlIndex} src={url.url} />
-          })
-          }
-        </div>
+        <Row>
+          <Col xs={8} md={10} lg={12}>
+            <h6>Episode number: { _id }</h6>
+            <div>
+              {urls.map((url, urlIndex) => {
+                return <Image key={urlIndex} src={url.url} fluid />
+              })
+              }
+            </div>
+          </Col>
+        </Row>
         <div>{(this.props.user._id) ? <Fragment>
           <Link to={this.props.match.url + '/edit'}><button>Add image to Episode</button></Link>
           <button className='btn-danger' onClick={this.deleteEpisode}>Delete Episode</button>
