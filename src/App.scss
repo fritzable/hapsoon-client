@@ -51,3 +51,36 @@ $charcoal: #ccc;
     max-width: 200px;
   }
 }
+
+.banner {
+  background: linear-gradient(135deg, $tertiary, $quaternary 60%, $secondary);
+  height: 15vh;
+
+  h4 {
+    align-self: flex-end;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 12vw;
+    height: 10vw;
+    margin-left: 20px;
+    padding-top: 10px;
+  }
+}
+
+.btn {
+  border: $quaternary 1px solid;
+  margin: 5px;
+}
+
+a {
+  color: $tertiary;
+}
+
+.carousel-item {
+  width: 50vw;
+  height: 50vh;
+}

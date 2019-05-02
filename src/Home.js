@@ -5,13 +5,17 @@ import MainCarousel from './MainCarousel.js'
 
 const Home = () => (
   <Fragment>
-    <Route exact path='/' component={MainCarousel} />
-    <ButtonToolbar>
-      <div className="btn"><Link to="/episodes-create">Add Episode</Link>
+    <section>
+      <div>
+        <Route exact path='/' component={MainCarousel} />
       </div>
-      <div className="btn"><Link to="/episodes">List of Episodes</Link>
-      </div>
-    </ButtonToolbar>
+      <ButtonToolbar>
+        <div className="btn"><Link to="/episodes-create">Add Episode</Link>
+        </div>
+        <div className="btn"><Link to="/episodes">List of Episodes</Link>
+        </div>
+      </ButtonToolbar>
+    </section>
   </Fragment>
 )
 
