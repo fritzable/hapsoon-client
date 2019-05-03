@@ -6,9 +6,7 @@ import MainCarousel from './MainCarousel.js'
 const Home = () => (
   <Fragment>
     <section>
-      <div>
-        <Route exact path='/' component={MainCarousel} />
-      </div>
+      <Route exact path='/' component={MainCarousel} />
       <ButtonToolbar>
         <div className="btn"><Link to="/episodes-create">Add Episode</Link>
         </div>
