@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.scss'
 import { Route } from 'react-router-dom'
+import axios from 'axios'
+import apiUrl from './apiConfig'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
@@ -56,6 +58,14 @@ class App extends Component {
         }
       }, timeout)
     })
+  }
+
+  call () {
+    axios.get(apiUrl + '/episodes')
+      .then(response => this.setState({
+        episodes: response.data.episodes
+      }))
+      .catch(console.log)
   }
 
   render () {
