@@ -61,7 +61,7 @@ class App extends Component {
   }
 
   call () {
-    axios.get(apiUrl + '/episodes')
+    axios.get(apiUrl + '/examples')
       .then(response => this.setState({
         episodes: response.data.episodes
       }))
