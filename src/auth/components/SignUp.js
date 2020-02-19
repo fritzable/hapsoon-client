@@ -42,6 +42,7 @@ class SignUp extends Component {
     return (
       <form className='auth-form' onSubmit={this.onSignUp}>
         <h3>Sign Up</h3>
+        <p>(Use dummy data only, these free servers are not secure)</p>
 
         <label htmlFor="email">Email</label>
         <input
@@ -49,7 +50,7 @@ class SignUp extends Component {
           name="email"
           value={email}
           type="email"
-          placeholder="Email"
+          placeholder="Made-up email"
           onChange={this.handleChange}
         />
         <label htmlFor="password">Password</label>
@@ -58,7 +59,7 @@ class SignUp extends Component {
           name="password"
           value={password}
           type="password"
-          placeholder="Password"
+          placeholder="Made-up password"
           onChange={this.handleChange}
         />
         <label htmlFor="passwordConfirmation">Confirm Password</label>
@@ -67,7 +68,7 @@ class SignUp extends Component {
           name="passwordConfirmation"
           value={passwordConfirmation}
           type="password"
-          placeholder="Confirm Password"
+          placeholder="Made-up password"
           onChange={this.handleChange}
         />
         <button type="submit">Sign Up</button>
